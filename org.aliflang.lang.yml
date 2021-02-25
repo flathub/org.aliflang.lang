@@ -4,6 +4,7 @@ runtime-version: '19.08'
 sdk: org.freedesktop.Sdk
 command: alifstudio
 finish-args:
+  - --device=dri
   - --share=ipc
   - --socket=x11
   - --filesystem=home
@@ -88,6 +89,31 @@ modules:
   - name: alif-lib
     buildsystem: simple
     build-commands:
+      # Tree files that required from Alif Studio 
+      # └── usr
+      #     ├── local
+      #     │   ├── include
+      #     │   │   └── aliflibwx
+      #     │   │       ├── boost NOTE: Not required if installed 
+      #     │   │       ├── utf8
+      #     │   │       └── utf8.h
+      #     │   ├── lib
+      #     │   │   └── aliflib
+      #     │   └── share
+      #     │       ├── aliflang
+      #     │       ├── aliflibwx
+      #     │       └── alifstudio
+      #     └── share
+      #         ├── aliflang
+      #         ├── alifstudio
+      #         ├── applications
+      #         ├── doc
+      #         │   └── aliflibwx
+      #         ├── icons
+      #         │   └── hicolor
+      #         │       └── 128x128
+      #         │           └── apps
+      #         └── metainfo
       - mkdir -p /app/share/icons/hicolor/128x128/apps/ /app/usr/share/icons/hicolor/128x128/apps/ /app/share/{metainfo,applications} /app/usr/local/include/aliflibwx/ /app/usr/local/share/{aliflang,alifstudio} /app/usr/local/lib/aliflib/
       - install ./usr/share/icons/hicolor/128x128/apps/org.aliflang.lang.png /app/share/icons/hicolor/128x128/apps/
       - install ./usr/share/icons/hicolor/128x128/apps/org.aliflang.lang.png /app/usr/share/icons/hicolor/128x128/apps/
@@ -99,7 +125,7 @@ modules:
       - cp -r ./usr/local/lib/aliflib/* /app/usr/local/lib/aliflib/
     sources:
       - type: git
-        url: https://github.com/sulimanp/alif-pkg.git
+        url: https://github.com/mynewusernameisavailable/alif-pkg.git
         commit: 75f5e7ec352ee9737d1d7f7c7554f0b5f7de85f2
 
 
