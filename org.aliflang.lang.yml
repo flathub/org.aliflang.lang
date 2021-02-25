@@ -115,18 +115,18 @@ modules:
       #         │           └── apps
       #         └── metainfo
       - mkdir -p /app/share/icons/hicolor/128x128/apps/ /app/usr/share/icons/hicolor/128x128/apps/ /app/share/{metainfo,applications} /app/usr/local/include/aliflibwx/ /app/usr/local/share/{aliflang,alifstudio} /app/usr/local/lib/aliflib/
-      - install ./usr/share/icons/hicolor/128x128/apps/org.aliflang.lang.png /app/share/icons/hicolor/128x128/apps/
-      - install ./usr/share/icons/hicolor/128x128/apps/org.aliflang.lang.png /app/usr/share/icons/hicolor/128x128/apps/
-      - install ./usr/share/metainfo/org.aliflang.lang.metainfo.xml /app/share/metainfo/
-      - install ./usr/share/applications/org.aliflang.lang.desktop /app/share/applications/
-      - cp -r ./usr/local/include/aliflibwx/{utf8,utf8.h} /app/usr/local/include/aliflibwx/
-      - cp -r ./usr/local/share/aliflang/{linux_alif_version.inf,Alif_Arabic_Programming_Language.pdf,copyright} /app/usr/local/share/aliflang/
-      - cp -r ./usr/local/share/alifstudio/{alifstudio_theme.xml,alifstudio_settings.xml} /app/usr/local/share/alifstudio/
-      - cp -r ./usr/local/lib/aliflib/* /app/usr/local/lib/aliflib/
+      - install alif-pkg/usr/share/icons/hicolor/128x128/apps/org.aliflang.lang.png /app/share/icons/hicolor/128x128/apps/
+      - install alif-pkg/usr/share/icons/hicolor/128x128/apps/org.aliflang.lang.png /app/usr/share/icons/hicolor/128x128/apps/
+      - install alif-pkg/usr/share/metainfo/org.aliflang.lang.metainfo.xml /app/share/metainfo/
+      - install alif-pkg/usr/share/applications/org.aliflang.lang.desktop /app/share/applications/
+      - cp -r alif-pkg/usr/local/include/aliflibwx/{utf8,utf8.h} /app/usr/local/include/aliflibwx/
+      - cp -r alif-pkg/usr/local/share/aliflang/{linux_alif_version.inf,Alif_Arabic_Programming_Language.pdf,copyright} /app/usr/local/share/aliflang/
+      - cp -r alif-pkg/usr/local/share/alifstudio/{alifstudio_theme.xml,alifstudio_settings.xml} /app/usr/local/share/alifstudio/
+      - cp -r alif-pkg/usr/local/lib/aliflib/* /app/usr/local/lib/aliflib/
     sources:
       - type: git
-        url: https://github.com/mynewusernameisavailable/alif-pkg.git
-        commit: 75f5e7ec352ee9737d1d7f7c7554f0b5f7de85f2
+        url: https://github.com/alifcommunity/packages
+        commit: dff5f31a5101b4230e6aa9fe7cfbdf277d0c68e2
 
 
   - name: alif-compiler
@@ -138,7 +138,7 @@ modules:
       - ln -s /app/bin/alif /app/usr/local/bin/alif
     sources:
       - type: git
-        url: https://github.com/aliflanguage/compiler.git
+        url: https://github.com/alifcommunity/compiler.git
         branch: flatpak-fork-unstable
         commit: f09b9a2cabf3f3a1907070d20874f14df4635b13
 
@@ -157,6 +157,6 @@ modules:
       - ln -s /app/usr/local/bin/alifstudio /app/bin/alifstudio;
     sources: 
       - type: git
-        url: https://github.com/aliflanguage/alifstudio.git
+        url: https://github.com/alifcommunity/alifstudio.git
         branch: flatpak-fork-unstable
         commit: 9e042b8dfe176065c2c7a2866ed105d7ee5ad6e3
