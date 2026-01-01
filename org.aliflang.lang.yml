@@ -139,7 +139,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/alifcommunity/compiler.git
-        branch: flatpak-fork-unstable
         commit: f09b9a2cabf3f3a1907070d20874f14df4635b13
 
 
@@ -158,5 +157,4 @@ modules:
     sources: 
       - type: git
         url: https://github.com/alifcommunity/alifstudio.git
-        branch: flatpak-fork-unstable
         commit: 9e042b8dfe176065c2c7a2866ed105d7ee5ad6e3
